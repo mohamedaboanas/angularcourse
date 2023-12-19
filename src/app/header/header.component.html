@@ -1,3 +1,4 @@
+<h1 [ngClass]="_applyClass">WELCOME TO OUR ANGULAR WORKSHOP.</h1>
 <p>header works!</p>
 {{ title }}
 {{ 5 + 6 }}
@@ -6,5 +7,72 @@
 <br />
 <!-- {{_Msg()}} -->
 
-<img [src]="_ImgUrl" [alt]="_ImgName" title="angular" width="{{_Width}}" [height]="_height"/>
+<img
+  [src]="_ImgUrl"
+  [alt]="_ImgName"
+  title="angular"
+  width="{{ _Width }}"
+  [height]="_height"
+/>
 <input type="text" [id]="_Id" title="Customer Name" />
+
+<br />
+
+<div class="div">
+  <button class="btn" type="button" [attr.ria-label]="_attrVal">
+    {{ _btnName }}
+  </button>
+</div>
+
+<br />
+<div class="div">
+  <input type="text" [class.txt-danger]="_error" title="telephone" />
+</div>
+<div class="div">
+  <input type="text" [class.txt-success]="!_error" title="address" />
+</div>
+<br />
+
+<div [style.background-color]="_error ? 'burlywood' : 'green'">
+  Style Binding.
+</div>
+
+<h2 [ngStyle]="_myStyle">Mohamed Amer Say Hello!</h2>
+
+<button title="get data from database" type="submit" (click)="_getData($event)">{{_btnTitle}}</button>
+
+<h1>{{_inputVal | uppercase}}</h1>
+<br>
+<input type="text" #inputValue title="change value">
+<br>
+<button type="button" (click)="getValues(inputValue)">Get Values</button><br>
+
+<div class="div">
+  <input type="text" title="two way binding" [(ngModel)]="_liveData">
+  <br>
+  <h1>{{_liveData}}</h1>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

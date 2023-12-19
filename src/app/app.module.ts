@@ -12,6 +12,7 @@ import { LeftNavComponent } from './main-layout/left-nav/left-nav.component';
 import { RightNavComponent } from './main-layout/right-nav/right-nav.component';
 import { identity } from 'rxjs';
 import { IdentityModule } from '../identity/identity.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { IdentityModule } from '../identity/identity.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    IdentityModule
+    IdentityModule,
+    FormsModule
   ],
   providers: [
     provideClientHydration()
