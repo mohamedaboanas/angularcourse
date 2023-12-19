@@ -1,2 +1,28 @@
 <h1>Welcome to</h1>
 <p>Angular Course</p>
+<div *ngIf="isValid; then productForPurchase; else productForSeller"></div>
+
+<ng-template #productForSeller>
+  <p>This Product can be shown in this section</p>
+</ng-template>
+
+<ng-template #productForPurchase
+  ><p>This Product can be hidden in this section</p>
+</ng-template>
+
+<div [ngSwitch]="Status">
+  <h1 *ngSwitchCase="'Success'">success</h1>
+  <h1 *ngSwitchCase="'Failed'">Failed</h1>
+  <h1 *ngSwitchCase="'Error'">error</h1>
+  <h1 *ngSwitchCase="'Info'">info</h1>
+  <h1 *ngSwitchDefault="'Info'">...</h1>
+</div>
+
+<input type="text" title="check status" [(ngModel)]="Num">
+<div [ngSwitch]="Num">
+  <h1 *ngSwitchCase="'0'">success</h1>
+  <h1 *ngSwitchCase="'1'">Failed</h1>
+  <h1 *ngSwitchCase="'2'">error</h1>
+  <h1 *ngSwitchCase="'3'">info</h1>
+  <h1 *ngSwitchDefault="'5'">...</h1>
+</div>
