@@ -1,5 +1,8 @@
 <h1>Welcome to</h1>
-<p>Angular Course</p>
+<p>{{title | lowercase}}</p>
+<p>{{title | uppercase}}</p>
+<p>{{title | titlecase}}</p>
+
 <div *ngIf="isValid; then productForPurchase; else productForSeller"></div>
 
 <ng-template #productForSeller>
@@ -31,6 +34,28 @@
   <span>{{i}} - {{item}} - {{e}} - {{f}} - {{l}}</span>
 </div>
 
+<span>Create Date : {{createdDate | date:'short'}}</span><br>
+<span>Long Date{{createdDate | date:'long'}}</span><br>
+
+<span>Price :  {{price | currency:'EUR'}}</span><br>
+<span>Price :  {{price | currency:'EGP'}}</span><br>
+
+<span>percentage :  {{percentage | percent}}</span>
+
+<span>{{message | slice:2}}</span><br>
+<span>{{message | slice:2:6}}</span>
+
+<h2>{{593.02| number:'3.2' | currency:'EUR'}}</h2>
+<h2>{{593.34535| number:'3.1-2'}}</h2>
+<h2>{{593.43534| number:'3.1-2'}}</h2>
+
+<h2>{{5.6| number:'1.0-0'}}</h2>
+<h2>{{5.3| number:'1.0-0'}}</h2>
+
+<h2>{{-5.6| number:'1.0-0'}}</h2>
+<h2>{{-5.3| number:'1.0-0'}}</h2>
+
+<h2>{{file | filesize:'GB'}} </h2>
 
 <table>
   <thead>

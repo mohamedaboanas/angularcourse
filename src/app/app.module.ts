@@ -13,6 +13,7 @@ import { RightNavComponent } from './main-layout/right-nav/right-nav.component';
 import { identity } from 'rxjs';
 import { IdentityModule } from '../identity/identity.module';
 import { FormsModule } from '@angular/forms';
+import { FilesizePipe } from './Pipes/filesize.pipe';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { FormsModule } from '@angular/forms';
     FooterComponent,
     MainLayoutComponent,
     LeftNavComponent,
-    RightNavComponent
+    RightNavComponent,
+    FilesizePipe
   ],
   imports: [
     BrowserModule,
