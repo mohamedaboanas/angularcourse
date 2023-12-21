@@ -3,9 +3,9 @@ import { BrowserModule, provideClientHydration } from '@angular/platform-browser
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ProductsComponent } from './Products/products.component';
+import { ProductsComponent } from './Products/products.component-Amer-PC';
 import { HooksComponentComponent } from './hooks-component/hooks-component.component';
-import { HeaderComponent } from './header/header.component';
+import { HeaderComponent } from './header/header.component-Amer-PC';
 import { FooterComponent } from './footer/footer.component';
 import { MainLayoutComponent } from './main-layout/main-layout.component';
 import { LeftNavComponent } from './main-layout/left-nav/left-nav.component';

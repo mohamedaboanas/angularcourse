@@ -15,14 +15,53 @@
   <h1 *ngSwitchCase="'Failed'">Failed</h1>
   <h1 *ngSwitchCase="'Error'">error</h1>
   <h1 *ngSwitchCase="'Info'">info</h1>
-  <h1 *ngSwitchDefault="'Info'">...</h1>
 </div>
 
-<input type="text" title="check status" [(ngModel)]="Num">
+<input type="text" title="check status" [(ngModel)]="Num" />
 <div [ngSwitch]="Num">
-  <h1 *ngSwitchCase="'0'">success</h1>
-  <h1 *ngSwitchCase="'1'">Failed</h1>
-  <h1 *ngSwitchCase="'2'">error</h1>
-  <h1 *ngSwitchCase="'3'">info</h1>
-  <h1 *ngSwitchDefault="'5'">...</h1>
+  <h1 *ngSwitchCase="'1'">success</h1>
+  <h1 *ngSwitchCase="'2'">Failed</h1>
+  <h1 *ngSwitchCase="'3'">error</h1>
+  <h1 *ngSwitchCase="'4'">info</h1>
 </div>
+
+
+<!-- ng for -->
+<div *ngFor="let item of lst; index as i; even as e; first as f; last as l">
+  <span>{{i}} - {{item}} - {{e}} - {{f}} - {{l}}</span>
+</div>
+
+
+<table>
+  <thead>
+    <th>Id</th>
+    <th>Name</th>
+    <th>age</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let student of students; even as e">
+      <td [ngStyle]="{background:e?'gray':'yellow'}">{{student.id}}</td>
+      <td>{{student.name}}</td>
+      <td>{{student.age}}</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

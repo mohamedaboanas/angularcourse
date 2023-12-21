@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrl: './header.component.scss',
+  templateUrl: './header.component-Amer-PC.html',
+  styleUrl: './header.component-Amer-PC.scss',
 })
 export class HeaderComponent implements OnInit {
   title: string = `hi, angular`;
@@ -32,7 +32,7 @@ export class HeaderComponent implements OnInit {
 
   _btnTitle: string = `Get Data`;
   _inputVal: string = '';
-  _liveData : string = '';
+  _liveData: string = '';
 
   ngOnInit(): void {}
   _Msg() {
