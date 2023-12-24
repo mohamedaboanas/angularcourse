@@ -14,6 +14,7 @@ import { identity } from 'rxjs';
 import { IdentityModule } from '../identity/identity.module';
 import { FormsModule } from '@angular/forms';
 import { FilesizePipe } from './Pipes/filesize.pipe';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { FilesizePipe } from './Pipes/filesize.pipe';
     MainLayoutComponent,
     LeftNavComponent,
     RightNavComponent,
-    FilesizePipe
+    FilesizePipe,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,
