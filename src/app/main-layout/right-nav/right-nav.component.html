@@ -1,1 +1,9 @@
 <p>right-nav works!</p>
+<h1>{{message}}</h1>
+
+<button (click)="childMsg()">Save</button>
+
+<br>
+<input type="text" #addToList title="addToList" id="txtVal">
+<button type="button" title="add" (click)="addNewItems(addToList.value)">AddItem</button>
+

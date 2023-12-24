@@ -1,5 +1,15 @@
 <p>main-layout works!</p>
 
 <app-left-nav></app-left-nav>
-<app-right-nav></app-right-nav>
+<ul>
+  <li *ngFor="let item of ToDoList">{{item}}</li>
+</ul>
+<app-right-nav
+  (outMessage)="childMsg=$event"
+  [msg]="_msg"
+  (newListEvent)="addToList($event)"
+>
+</app-right-nav>
+
+<h1>{{childMsg}}</h1>
 <app-products></app-products>

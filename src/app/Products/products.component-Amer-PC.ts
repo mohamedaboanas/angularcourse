@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./products.component-Amer-PC.scss'],
 })
 export class ProductsComponent {
+
   title: string = 'Angular Course - Products';
   isValid: boolean = true;
   Status: string = 'Success';
@@ -13,9 +14,12 @@ export class ProductsComponent {
   createdDate = new Date();
   price = 500.00;
   percentage = 5;
+
   message: string = "Hello with our angular course."
+
   lst = [1, 2, 3, 4];
   file:number = 1048576;
+
   students = [
     { id: 1, name: 'Mohamed', age: 42 },
     { id: 2, name: 'Ahmad', age: 20 },
