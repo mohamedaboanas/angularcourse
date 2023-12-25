@@ -15,6 +15,8 @@ import { IdentityModule } from '../identity/identity.module';
 import { FormsModule } from '@angular/forms';
 import { FilesizePipe } from './Pipes/filesize.pipe';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { HttpClientModule } from '@angular/common/http';
+import { EternalConsumeComponent } from './eternal-consume/eternal-consume.component';
 
 @NgModule({
   declarations: [
@@ -27,13 +29,15 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     LeftNavComponent,
     RightNavComponent,
     FilesizePipe,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    EternalConsumeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     IdentityModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
     provideClientHydration()

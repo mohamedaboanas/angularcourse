@@ -1,12 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../Services/products.service';
+import { IPVersion } from 'net';
+import { IProducts } from '../Interfaces/IProducts';
 
 @Component({
   selector: 'app-products',
   templateUrl: './products.component-Amer-PC.html',
   styleUrls: ['./products.component-Amer-PC.scss'],
 })
-export class ProductsComponent {
+export class ProductsComponent implements OnInit {
   title: string = 'Angular Course - Products';
   isValid: boolean = true;
   Status: string = 'Success';
@@ -28,6 +30,12 @@ export class ProductsComponent {
   ];
 
   constructor(private _productList: ProductsService) {}
-
-  prdList = this._productList.getProductsList();
+  prdList: IProducts[] = [];
+  errMsg: string = '';
+  ngOnInit(): void {
+    this._productList.getProductsList().subscribe({
+      next: (data) => (this.prdList = data),
+      error: (error) => (this.errMsg = error),
+    });
+  }
 }

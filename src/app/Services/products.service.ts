@@ -1,16 +1,21 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { IProducts } from '../Interfaces/IProducts';
+import { catchError } from 'rxjs';
+import { throwError } from 'rxjs/internal/observable/throwError';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductsService {
-  constructor() {}
+  // _baseUrl = 'https://www.google.com/api';
+  _baseUrl = '/assets/Products.json';
+  constructor(private _http: HttpClient) {}
   getProductsList() {
-    return [
-      { name: 'Laptop', price: 3000 },
-      { name: 'TV', price: 4000 },
-      { name: 'Screen', price: 1000 },
-      { name: 'Mobile', price: 2000 }
-    ];
+    return this._http.get<IProducts[]>(this._baseUrl).pipe(
+      catchError((error) => {
+        return throwError(() => error.message || 'Server Not Found');
+      })
+    );
   }
 }
