@@ -1,5 +1,3 @@
-<p>product-details works!</p>
-
 <table>
   <thead>
     <tr>
@@ -8,11 +6,13 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let items of prdList;">
-      <td>{{items.name}}</td>
-      <td>{{items.price}}</td>
+    <tr *ngFor="let items of prdList">
+      <td>
+        <a [class.idParam]="isActive(items)" (click)="GoToSubproducts(items)" >{{ items.name }}</a>
+      </td>
+      <td>{{ items.price }}</td>
     </tr>
   </tbody>
 </table>
 
-<div>{{errMsg}}</div>
+<div>{{ errMsg }}</div>

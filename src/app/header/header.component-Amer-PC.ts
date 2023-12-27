@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './header.component-Amer-PC.scss',
 })
 export class HeaderComponent implements OnInit {
-  title: string = `hi, angular`;
+   title: string = `Angular Single Page`;
   _ImgUrl: string = '';
   _ImgName: string = 'Angular';
   _Id: string | number = 5;

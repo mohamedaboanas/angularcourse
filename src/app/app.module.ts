@@ -17,6 +17,12 @@ import { FilesizePipe } from './Pipes/filesize.pipe';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { HttpClientModule } from '@angular/common/http';
 import { EternalConsumeComponent } from './eternal-consume/eternal-consume.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { SubProductsComponent } from './sub-products/sub-products.component';
+import { RatingComponent } from './sub-products/rating/rating.component';
+import { CommentComponent } from './sub-products/comment/comment.component';
+
+
 
 @NgModule({
   declarations: [
@@ -30,7 +36,11 @@ import { EternalConsumeComponent } from './eternal-consume/eternal-consume.compo
     RightNavComponent,
     FilesizePipe,
     ProductDetailsComponent,
-    EternalConsumeComponent
+    EternalConsumeComponent,
+    NotFoundComponent,
+    SubProductsComponent,
+    RatingComponent,
+    CommentComponent,
   ],
   imports: [
     BrowserModule,

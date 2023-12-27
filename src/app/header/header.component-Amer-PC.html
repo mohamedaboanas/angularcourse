@@ -1,12 +1,15 @@
 <h1 [ngClass]="_applyClass">WELCOME TO OUR ANGULAR WORKSHOP.</h1>
-<p>header works!</p>
-{{ title }}
-{{ 5 + 6 }}
-{{ "title:" + title.toUpperCase() + "Length is: " + title.length }}
+<!-- {{ title }} -->
+<!-- {{ "title:" + title.toUpperCase() + "Length is: " + title.length }} -->
 
-<br />
+
+<nav>
+  <a routerLink="/products">Products</a><br>
+  <a routerLink="/product-details">Product Details</a>
+</nav>
+<br>
 <!-- {{_Msg()}} -->
-
+<!--
 <img
   [src]="_ImgUrl"
   [alt]="_ImgName"
@@ -51,7 +54,7 @@
   <input type="text" title="two way binding" [(ngModel)]="_liveData">
   <br>
   <h1>{{_liveData}}</h1>
-</div>
+</div> -->
 
 
 
