@@ -10,7 +10,6 @@ import { FooterComponent } from './footer/footer.component';
 import { MainLayoutComponent } from './main-layout/main-layout.component';
 import { LeftNavComponent } from './main-layout/left-nav/left-nav.component';
 import { RightNavComponent } from './main-layout/right-nav/right-nav.component';
-import { identity } from 'rxjs';
 import { IdentityModule } from '../identity/identity.module';
 import { FormsModule } from '@angular/forms';
 import { FilesizePipe } from './Pipes/filesize.pipe';
@@ -21,6 +20,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { SubProductsComponent } from './sub-products/sub-products.component';
 import { RatingComponent } from './sub-products/rating/rating.component';
 import { CommentComponent } from './sub-products/comment/comment.component';
+import { RegisterComponent } from '../identity/register/register.component';
 
 
 
@@ -40,18 +40,16 @@ import { CommentComponent } from './sub-products/comment/comment.component';
     NotFoundComponent,
     SubProductsComponent,
     RatingComponent,
-    CommentComponent,
+    CommentComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     IdentityModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
-  providers: [
-    provideClientHydration()
-  ],
-  bootstrap: [AppComponent]
+  providers: [provideClientHydration()],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

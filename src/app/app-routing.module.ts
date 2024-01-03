@@ -10,7 +10,7 @@ import { RegisterComponent } from '../identity/register/register.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/', pathMatch: 'full' },
+  { path: '', redirectTo: '/register', pathMatch: 'full' },
   { path: 'products', component: ProductsComponent },
   { path: 'product-details', component: ProductDetailsComponent },
   { path: 'register', component: RegisterComponent },
