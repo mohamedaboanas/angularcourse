@@ -7,13 +7,15 @@ import { SubProductsComponent } from './sub-products/sub-products.component';
 import { RatingComponent } from './sub-products/rating/rating.component';
 import { CommentComponent } from './sub-products/comment/comment.component';
 import { RegisterComponent } from '../identity/register/register.component';
+import { EnrollComponent } from './enroll/enroll.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/register', pathMatch: 'full' },
+  { path: '', redirectTo: '/enroll', pathMatch: 'full' },
   { path: 'products', component: ProductsComponent },
   { path: 'product-details', component: ProductDetailsComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'enroll', component: EnrollComponent },
   {
     path: 'sub-products/:id',
     component: SubProductsComponent,

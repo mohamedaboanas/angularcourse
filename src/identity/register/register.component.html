@@ -1,6 +1,9 @@
 <div class="container">
   <h1 class="head">Register Form</h1>
-  <form #formInfo="ngForm">
+  <div class="alert alert-success" *ngIf="finshed">
+    <h2>Submitted Successfully!</h2>
+  </div>
+  <form #formInfo="ngForm" novalidate  (ngSubmit)="submitData(formInfo)" *ngIf="!finshed">
     <div class="form-group">
       <div>{{ formInfo.value | json }}</div>
       <br />
@@ -167,6 +170,6 @@
       <input type="checkbox" class="form-check-input" id="exampleCheck1" />
       <label class="form-check-label" for="exampleCheck1">Check me out</label>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" [disabled]="formInfo.form.invalid || hasError" class="btn btn-primary">Submit</button>
   </form>
 </div>

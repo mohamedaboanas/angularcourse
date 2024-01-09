@@ -11,7 +11,7 @@ import { MainLayoutComponent } from './main-layout/main-layout.component';
 import { LeftNavComponent } from './main-layout/left-nav/left-nav.component';
 import { RightNavComponent } from './main-layout/right-nav/right-nav.component';
 import { IdentityModule } from '../identity/identity.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FilesizePipe } from './Pipes/filesize.pipe';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -21,6 +21,7 @@ import { SubProductsComponent } from './sub-products/sub-products.component';
 import { RatingComponent } from './sub-products/rating/rating.component';
 import { CommentComponent } from './sub-products/comment/comment.component';
 import { RegisterComponent } from '../identity/register/register.component';
+import { EnrollComponent } from './enroll/enroll.component';
 
 
 
@@ -40,7 +41,8 @@ import { RegisterComponent } from '../identity/register/register.component';
     NotFoundComponent,
     SubProductsComponent,
     RatingComponent,
-    CommentComponent
+    CommentComponent,
+    EnrollComponent
   ],
   imports: [
     BrowserModule,
@@ -48,6 +50,7 @@ import { RegisterComponent } from '../identity/register/register.component';
     IdentityModule,
     FormsModule,
     HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [provideClientHydration()],
   bootstrap: [AppComponent],
