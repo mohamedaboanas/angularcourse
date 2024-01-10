@@ -1,5 +1,5 @@
 <div class="container-fluid">
-  <form [formGroup]="registerForm">
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Name</label>
       <input
@@ -8,13 +8,27 @@
         type="text"
         class="form-control"
         id="name"
-        aria-describedby="namehelp"/>
-
+        aria-describedby="namehelp"
+        [class.is-invalid]="_name?.invalid && _name?.touched"
+        [class.is-valid]="_name?.valid && _name?.touched"
+      />
+      <div *ngIf="_name?.invalid && _name?.touched">
+        <small *ngIf="_name?.errors?.['required']" class="text-danger"
+          >This Field is required.</small
+        >
+        <small *ngIf="_name?.errors?.['minLength']" class="text-danger"
+          >Min Length 3 charachters.</small
+        >
+        <small *ngIf="_name?.errors?.['_forbiddenvalue']" class="text-danger"
+          >{{_name?.errors?.['_forbiddenvalue'].value}} Keyword is not allowed,
+          please try another keyword.</small
+        >
+      </div>
     </div>
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">Password</label>
       <input
-       title="password"
+        title="password"
         type="password"
         class="form-control"
         id="password1"
@@ -27,49 +41,83 @@
       >
       <input
         type="password"
-        formControlName="confirmpassword"
+        formControlName="confirmPassword"
         class="form-control"
-        id="ConfirmPassword"
+        id="confirmPassword"
+        [class.is-invalid]="registerForm.errors?.['missMatch']"
         title="Confirm"
       />
+      <small class="text-danger" *ngIf="registerForm.errors?.['missMatch']"
+        >Miss Match</small
+      >
     </div>
 
     <div formGroupName="address">
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Country</label>
+        <input
+          title="country"
+          formControlName="country"
+          type="text"
+          class="form-control"
+          id="Country"
+          aria-describedby="countryHelp"
+        />
+      </div>
 
-           <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label">Country</label>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">State</label>
+        <input
+          title="state"
+          formControlName="state"
+          type="text"
+          class="form-control"
+          id="state"
+          aria-describedby="emailHelp"
+        />
+      </div>
+    </div>
+    <div class="mb-3">
+      <button class="btn btn-info btn-sm mt-2" (click)="addNewEmailControl()">
+        Add new email
+      </button>
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
       <input
-        title="country"
-        formControlName="country"
-        type="text"
+        title="email"
+        type="email"
         class="form-control"
-        id="Country"
-        aria-describedby="countryHelp"
+        id="email"
+        formControlName="email"
+        placeholder="email"
+        [class.is-invalid]="_email?.invalid && _email?.touched"/>
+
+      <small class="text-danger"
+        [class.d-none]="_email?.valid || _email?.untouched" >This Field is required</small>
+    </div>
+
+    <div formArrayName="newEmail" *ngFor="let c of _newEmail.controls let i = index">
+      <input type="text" class="form-control" [formControlName]="i" title="new email"/>
+    </div>
+
+    <div class="mb-3">
+      <input
+        (click)="setEmailValidation()"
+        title="sendEmail"
+        type="checkbox"
+        class="form-check-input"
+        id="sendEmail"
+        formControlName="subscribe"
       />
+      <label for="sendEmail" class="form-check-label">Send Email</label>
     </div>
 
-     <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label">State</label>
-      <input
-        title="state"
-        formControlName="state"
-        type="text"
-        class="form-control"
-        id="state"
-        aria-describedby="emailHelp"/>
-    </div>
-    </div>
-
-
-
-    <div class="mb-3 form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-      <label class="form-check-label" for="exampleCheck1">Check me out</label>
-    </div>
-    <button type="submit" class="btn btn-primary" formControlName="checkval">
-      Submit
+    <button [disabled]="!registerForm.valid" type="submit" class="btn btn-primary">Submit</button>
+    <button type="button" class="btn btn-secondry" (click)="loadData()">
+      Load Data
     </button>
 
-    <p>{{registerForm.value | json}}</p>
+    <p>{{ registerForm.value | json }}</p>
   </form>
 </div>
